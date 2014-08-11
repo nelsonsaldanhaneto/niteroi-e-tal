@@ -19,7 +19,7 @@
 define('DB_NAME', 'niteroietal');
 
 /** MySQL database username */
-define('DB_USER', 'estudiodeestilo');
+define('DB_USER', 'niteroietal');
 
 /** MySQL database password */
 define('DB_PASSWORD', 'ede27114375');
