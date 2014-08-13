@@ -1,4 +1,8 @@
 <?php
+
+define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME']);
+define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
+
 /**
  * The base configurations of the WordPress.
  *
