@@ -21,5 +21,5 @@ then
   DB_HOST='mysql01.niteroietal.hospedagemdesites.ws'
   NOME_ARQ='./banco-de-dados.sql'
 
-  /Applications/MAMP/Library/bin/mysql -u${DB_USER} -h${DB_HOST} -p${DB_PASSWORD} ${DB_NAME} < ${NOME_ARQ}
+  mysql -u${DB_USER} -h${DB_HOST} -p${DB_PASSWORD} ${DB_NAME} < ${NOME_ARQ}
 fi
