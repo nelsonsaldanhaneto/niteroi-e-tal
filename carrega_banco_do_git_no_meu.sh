@@ -15,10 +15,10 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
 then
   echo "Importando..."
 
-  DB_NAME='nome-do-bd'
-  DB_USER='usuario-locaweb'
-  DB_PASSWORD='senha-locaweb'
-  DB_HOST='host-locaweb'
+  DB_NAME='niteroietal'
+  DB_USER='niteroietal'
+  DB_PASSWORD='ede27114375'
+  DB_HOST='mysql01.niteroietal.hospedagemdesites.ws'
   NOME_ARQ='./banco-de-dados.sql'
 
   /Applications/MAMP/Library/bin/mysql -u${DB_USER} -h${DB_HOST} -p${DB_PASSWORD} ${DB_NAME} < ${NOME_ARQ}
