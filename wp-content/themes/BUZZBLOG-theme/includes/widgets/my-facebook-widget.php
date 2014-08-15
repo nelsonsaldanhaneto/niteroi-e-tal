@@ -6,7 +6,6 @@
 	
 		public function widget( $args, $instance ){
 			extract($args, EXTR_SKIP);
-			$title          = apply_filters('widget_title', empty($instance['title']) ? theme_locals("facebook_title") : $instance['title']);
 			$facebook_URL   = apply_filters('widget_facebook_URL', empty($instance['facebook_URL']) ? '' : $instance['facebook_URL']);
 			$box_width      = apply_filters('widget_box_width', empty($instance['box_width']) ? '100%' : $instance['box_width']);
 			$box_height     = apply_filters('widget_box_height', empty($instance['box_height']) ? '100%' : $instance['box_height']);
@@ -24,7 +23,6 @@
 			}
 			if($facebook_URL!=''){
 				echo $before_widget;
-				echo $before_title . $title . $after_title; 
 				?>
 				<div class="facebook_like_box">
 
@@ -45,13 +43,11 @@
 				echo $after_widget; 
 			}else { 
 			echo $before_widget;
-			echo $before_title . $title . $after_title;
 			echo theme_locals("facebook_error"); 
 			echo $after_widget; }
 		}
 		public function update( $new_instance, $old_instance ){
 			$instance                   = $old_instance;
-			$instance['title']          = strip_tags($new_instance['title']);
 			$instance['facebook_URL']   = $new_instance['facebook_URL'];
 			$instance['box_width']      = $new_instance['box_width'];
 			$instance['box_height']     = $new_instance['box_height'];
@@ -64,10 +60,9 @@
 			return $instance;
 		}
 		public function form( $instance ){   
-			$defaults = array('title' => 'My Facebook Page', 'facebook_URL'=>'', 'box_width' => '100%', 'box_height' => '100%', 'color_scheme' => 'light', 'display_haeder' => 'on', 'display_faces' => 'on', 'display_stream' => 'on', 'display_border' => 'on', 'display_header' => 'on');
+			$defaults = array('facebook_URL'=>'', 'box_width' => '100%', 'box_height' => '100%', 'color_scheme' => 'light', 'display_haeder' => 'on', 'display_faces' => 'on', 'display_stream' => 'on', 'display_border' => 'on', 'display_header' => 'on');
 			$instance = wp_parse_args( (array) $instance, $defaults );
 
-			$title          = esc_attr($instance['title']);
 			$facebook_URL   = $instance['facebook_URL'];
 			$box_width      = $instance['box_width'];
 			$box_height     = $instance['box_height'];
@@ -78,11 +73,6 @@
 			$display_border = $instance['display_border'];
 
 			?>
-			<!--title-->
-			<p>
-				<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php echo theme_locals("title"); ?></label>
-				<input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
-			</p>
 			<!--facebook_URL-->
 			<p>
 				<label for="<?php echo esc_attr($this->get_field_id('facebook_URL')); ?>"><?php echo theme_locals("facebook_url").':'; ?></label>
