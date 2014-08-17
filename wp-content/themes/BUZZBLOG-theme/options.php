@@ -850,7 +850,7 @@ $options['email_share'] = array( "name" => "Enable Email sharing for blog posts?
 		$options['footer_text'] = array( "name" => "Footer copyright text",
 							"desc" => "Enter text used in the right side of the footer. HTML tags are allowed.",
 							"id" => "footer_text",
-							"std" => "Copyrights &copy; 2014 BUZZBLOG. All Rights Reserved.",
+							"std" => "&copy; 2014 Niterói e Tal. Todos os direitos reservados.",
 							"type" => "textarea");
 		
 		$options[] = array( "name" => "Google Analytics Code",
